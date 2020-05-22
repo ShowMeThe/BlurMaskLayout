@@ -42,7 +42,7 @@ class BlurMaskLayout @JvmOverloads constructor(
         private inline fun doPostDraw(crossinline run: () -> Unit) {
             postCallback(
                 Choreographer.getInstance(),
-                4,
+                3,
                 Runnable { run() },
                 null
             )
