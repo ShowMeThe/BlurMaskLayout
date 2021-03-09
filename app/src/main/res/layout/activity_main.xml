@@ -11,37 +11,58 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <ImageView
-                android:scaleType="center"
-                android:src="@mipmap/ic_wallpaper"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"/>
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
 
 
-            <ImageView
-                android:src="@mipmap/ic_wallpaper"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"/>
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <ImageView
+                   android:scaleType="center"
+                   android:src="@mipmap/ic_wallpaper"
+                   android:layout_width="match_parent"
+                   android:layout_height="500dp"/>
 
 
-            <ImageView
-                android:scaleType="centerCrop"
-                android:src="@mipmap/ic_wallpaper"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"/>
+               <ImageView
+                   android:src="@mipmap/ic_wallpaper"
+                   android:layout_width="match_parent"
+                   android:layout_height="500dp"/>
 
-        </LinearLayout>
 
+               <ImageView
+                   android:scaleType="centerCrop"
+                   android:src="@mipmap/ic_wallpaper"
+                   android:layout_width="match_parent"
+                   android:layout_height="500dp"/>
+
+           </LinearLayout>
+
+
+           <Button
+               android:id="@+id/btn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+
+           <ImageView
+               android:id="@+id/ivLogo"
+               android:layout_marginTop="250dp"
+               android:layout_centerHorizontal="true"
+               android:layout_width="100dp"
+               android:layout_height="100dp"/>
+
+       </RelativeLayout>
 
    </androidx.core.widget.NestedScrollView>
 
 
-    <com.showmethe.blurlayout.BlurMaskLayout
+    <com.show.blurlayout.BlurMaskLayout
         android:id="@+id/mask"
         android:focusable="false"
         android:layout_centerInParent="true"

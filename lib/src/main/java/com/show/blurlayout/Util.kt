@@ -1,4 +1,4 @@
-package com.showmethe.blurlayout
+package com.show.blurlayout
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -22,13 +22,14 @@ class Util {
             rs = RenderScript.create(context.applicationContext)
         }
 
-        fun getManager() : Util{
+        fun getManager() : Util {
             return instant
         }
     }
 
     fun process(src: Bitmap, @FloatRange(from = 0.0,to = 25.0)  radius: Float): Bitmap {
-        val input = Allocation.createFromBitmap(rs, src,
+        val input = Allocation.createFromBitmap(
+            rs, src,
             Allocation.MipmapControl.MIPMAP_NONE,
             Allocation.USAGE_SCRIPT)
         val output: Allocation = Allocation.createTyped(rs, input.type)
@@ -39,14 +40,4 @@ class Util {
         output.copyTo(src)
         return  src
     }
-
-    private val bitmapWeakPool = HashMap<String,SoftReference<Bitmap>>()
-
-    fun putBitmap(width: Int,height: Int,src: SoftReference<Bitmap>){
-        src.get()?.apply {
-            val key = "${width}&${height}"
-            bitmapWeakPool[key] = src
-        }
-    }
-    fun getBitmap(width: Int,height:Int) = bitmapWeakPool["${width}&${height}"]
 }
