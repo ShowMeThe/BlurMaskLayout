@@ -94,7 +94,7 @@ class BlurMaskLayout @JvmOverloads constructor(
             return
         }
 
-        if(width < 0 || height < 0){
+        if(width <= 0 || height <= 0){
             return
         }
 
@@ -111,7 +111,7 @@ class BlurMaskLayout @JvmOverloads constructor(
         val scaledWidth = (width / sampling).toInt()
         val scaledHeight = (height / sampling).toInt()
 
-        if(scaledWidth < 0 || scaledHeight < 0){
+        if(scaledWidth <= 0 || scaledHeight <= 0){
             return
         }
 
