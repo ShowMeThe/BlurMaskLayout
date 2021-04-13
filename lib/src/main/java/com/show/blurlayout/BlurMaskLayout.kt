@@ -94,7 +94,11 @@ class BlurMaskLayout @JvmOverloads constructor(
             return
         }
 
+        if(width < 0 || height < 0){
+            return
+        }
 
+        
         //start
         val canvas = picture.beginRecording(rectWidth, rectHeight)
         canvas.translate(-rect.left.toFloat(), -rect.top.toFloat())
@@ -106,6 +110,10 @@ class BlurMaskLayout @JvmOverloads constructor(
 
         val scaledWidth = (width / sampling).toInt()
         val scaledHeight = (height / sampling).toInt()
+
+        if(scaledWidth < 0 || scaledHeight < 0){
+            return
+        }
 
         val newBitmap = Bitmap.createBitmap(scaledWidth, scaledHeight, Bitmap.Config.ARGB_8888)
 
